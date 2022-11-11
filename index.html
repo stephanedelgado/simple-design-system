@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Design System</title>
+    <meta name="description" content="Page description. No longer than 155 characters.">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0839e22bb1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="banner rounded" style="background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
+      <div class="container">
+        <h1 id="headline" >Simple Design System</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate doloremque deserunt culpa dolore mollitia voluptas repellendus. Non perferendis consectetur necessitatibus vitae optio at soluta libero similique repudiandae. Debitis, fugiat excepturi.</p>
+        <a href="" class="btn-ghost">Try it Now!</a>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+      <h2>1. Task List</h2>
+      <ol class="fa-ul" id="todo-list">
+        <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>Go through the lecture</li>
+        <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>Demonstrate with Live coding</li>
+        <li><span class="fa-li"><i class="fa-regular fa-square"></i></span>Delicious Turkish lunchbreak</li>
+        <li><span class="fa-li"><i class="fa-solid fa-square"></i></span>Assist where needed</li>
+        <li><span class="fa-li"><i class="fa-solid fa-spinner fa-pulse"></i></span>Watch them swim</li>
+      </ol>
+
+      <!-- Avatar -->
+      <h2>2. Avatar</h2>
+      <img src="images/duotone-blue-300.png" alt="" class="avatar">
+      <img src="images/duotone-blue-300.png" alt="" class="avatar avatar-sm">
+      
+      <!-- Button -->
+      <h2>3. Button</h2>
+      <a href="#" class="btn-red">Delete</a>
+      <a href="#" class="btn-ghost">Subscribe</a>
+
+      <!-- Card Category -->
+      <h2>4. Card Category</h2>
+      <a href="#" class="card-category rounded shadowed" 
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgb(254 5 5 / 30%)), 
+        url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"
+        ><h2>Breakfast</h2>
+      </a>
+
+      <!-- Card Product -->
+      <h2>5. Card Product</h2>
+      <div class="card-product rounded shadowed">
+        <img class="" src="images/nars-makeup.jpg" alt="">
+        <div class="product-details">
+          <h2>Glamour Lipstick</h2>
+          <p>You're a star today, let your lips shine</p>
+        </div>
+      </div>
+      
+      <!-- Card Trip Grid -->
+      <h2>6. Card Trip</h2>
+      <div class="card-container">
+        <div class="card-trip rounded shadowed">
+          <img src="https://picsum.photos/600/400" alt="" class="card-trip-hero" >
+          <img src="images/duotone-blue-300.png" alt="" class="card-trip-avatar">
+          <div class="trip-details">
+            <div>
+              <h2>Trip to Nowhere</h2>
+              <p>Rediscover your own bedroom</p>
+            </div>
+            <p id="trip-price" >$179.99</p>
+          </div>
+        </div>
+        <div class="card-trip rounded shadowed">
+          <img src="https://picsum.photos/seed/picsum/600/400" alt="" class="card-trip-hero" >
+          <img src="images/duotone-blue-300.png" alt="" class="card-trip-avatar">
+          <div class="trip-details">
+            <div>
+              <h2>Trip to Nowhere</h2>
+              <p>Rediscover your own bedroom</p>
+            </div>
+            <p id="trip-price" >$179.99</p>
+          </div>
+        </div>
+        <div class="card-trip rounded shadowed">
+          <img src="https://picsum.photos/seed/picsum/600/400" alt="" class="card-trip-hero" >
+          <img src="images/duotone-blue-300.png" alt="" class="card-trip-avatar">
+          <div class="trip-details">
+            <div>
+              <h2>Trip to Nowhere</h2>
+              <p>Rediscover your own bedroom</p>
+            </div>
+            <p id="trip-price" >$179.99</p>
+          </div>
+        </div>
+        <div class="card-trip rounded shadowed">
+          <img src="https://picsum.photos/600/400" alt="" class="card-trip-hero" >
+          <img src="images/duotone-blue-300.png" alt="" class="card-trip-avatar">
+          <div class="trip-details">
+            <div>
+              <h2>Trip to Nowhere</h2>
+              <p>Rediscover your own bedroom</p>
+            </div>
+            <p id="trip-price" >$179.99</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+      <script>
+        // Change avatar size
+        const avatars = document.getElementsByClassName("avatar");
+        const avatarsToArray = Array.from(avatars)
+        avatarsToArray.forEach((avatar) => {
+          avatar.addEventListener("click", (e) => {
+            console.log(e);
+            e.currentTarget.classList.toggle("avatar-sm")
+          })
+        })
+        // Toggle list icon
+        const list = document.querySelectorAll("#todo-list li > span > i");
+        console.log(list);
+        list.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            console.log(e);
+            // e.currentTarget.classList.remove("fa-square");
+            // e.currentTarget.classList.add("fa-check-square");
+            e.currentTarget.classList.toggle("fa-check-square");
+          })
+        })
+      </script>
+
+  </body>
+</html>
+<!-- end of file -->
